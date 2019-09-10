@@ -33,11 +33,11 @@ def line():
     line_values=values
     return render_template('line_chart.html', title='Bitcoin Monthly Price in USD', max=17000, labels=line_labels, values=line_values)
 
-@app.route('/pie')
+@app.route('/tooltip')
 def pie():
     pie_labels = labels
     pie_values = values
-    return render_template('pie_chart.html', title='Bitcoin Monthly Price in USD', max=17000, set=zip(values, labels, colors))
+    return render_template('tooltip_chart.html', title='Bitcoin Monthly Price in USD', max=17000, set=zip(values, labels, colors))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
